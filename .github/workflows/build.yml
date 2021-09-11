@@ -1,0 +1,35 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - run: npm install
+
+      - name: Run webpack build
+        run: npm run build
+
+      - name: Deploy built page
+        run: |
+          mkdir /tmp/build
+          cp -r ./.git /tmp/build
+          cp -r ./dist/* /tmp/build
+          cd /tmp/build
+          git checkout --orphan gh-pages
+          git rm --cached -r .
+          git add .
+          git config user.name "${{github.event.head_commit.author.name}}"
+          git config user.email "${{github.event.head_commit.author.email}}"
+          git commit -m "chore: run build for $GITHUB_SHA"
+          git push -f -u origin gh-pages
+
