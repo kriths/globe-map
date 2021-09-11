@@ -1,7 +1,8 @@
 import {Mesh, MeshBasicMaterial, MeshStandardMaterial, Scene, SphereGeometry, Vector3} from "three";
-import {degToRad, randFloat} from "three/src/math/MathUtils";
+import {degToRad} from "three/src/math/MathUtils";
 import {Object3D} from "three/src/core/Object3D";
-
+import countries from "../data/countries.json";
+import {Country} from "../data/country";
 
 const AXIS_SOUTH_NORTH = new Vector3(0, 1, 0);
 const ROTATION_PER_TICK = degToRad(0.1);
@@ -16,20 +17,15 @@ function latLonToCoords(latitude: number, longitude: number): Vector3 {
   return new Vector3(x, y, z);
 }
 
-function createDots(count: number): Mesh[] {
+function createCountries(): Mesh[] {
   const material = new MeshBasicMaterial();
   const geo = new SphereGeometry(0.01, 4, 4);
 
-  const meshes: Mesh[] = [];
-  for (let i = 0; i < count; ++i) {
+  return (countries as Country[]).map(country => {
     const mesh = new Mesh(geo, material);
-    const lat = randFloat(-90, 90);
-    const lon = randFloat(-180, 180);
-    mesh.position.copy(latLonToCoords(lat, lon));
-    meshes.push(mesh);
-  }
-
-  return meshes;
+    mesh.position.copy(latLonToCoords(country.lat, country.lon));
+    return mesh;
+  })
 }
 
 export default class Globe {
@@ -38,7 +34,7 @@ export default class Globe {
 
   constructor(scene: Scene) {
     this.globe = new Mesh(
-      new SphereGeometry(1, 16, 10),
+      new SphereGeometry(1, 160, 100),
       new MeshStandardMaterial({
         wireframe: true,
       }),
@@ -46,7 +42,7 @@ export default class Globe {
     scene.add(this.globe);
 
     this.children = [];
-    this.children.push(...createDots(100));
+    this.children.push(...createCountries());
 
     scene.add(...this.children);
   }
