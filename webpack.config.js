@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Spinny Globe",
+      template: "./src/index.html",
     }),
   ],
   output: {

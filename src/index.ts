@@ -3,6 +3,7 @@ import "./index.css";
 import addSun from "./objects/sun";
 import Globe from "./objects/globe";
 import addStars from "./objects/stars";
+import Game from "./game";
 
 const canvas = setupCanvas();
 const globe = new Globe(canvas.scene);
@@ -17,3 +18,6 @@ function animate() {
 }
 
 animate();
+
+// TODO Add state management / reset
+new Game(globe);
