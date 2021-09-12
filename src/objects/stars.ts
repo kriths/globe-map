@@ -2,7 +2,7 @@ import {Mesh, MeshBasicMaterial, Scene, SphereGeometry} from "three";
 import {randFloat} from "three/src/math/MathUtils";
 import {latLonToCoords} from "../util/coordinates";
 
-const STAR_COUNT = 5000;
+const STAR_COUNT = 500;
 const DISTANCE = 500;
 
 export default function addStars(scene: Scene) {
