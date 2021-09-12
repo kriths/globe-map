@@ -32,3 +32,19 @@ body {
 #controls label {
   font-size: 12px;
 }
+
+#toggle-rotation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+
+  background: #222222ff;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

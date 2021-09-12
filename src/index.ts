@@ -21,3 +21,7 @@ animate();
 
 // TODO Add state management / reset
 new Game(globe);
+
+document.getElementById("toggle-rotation").onclick = () => {
+  globe.rotating = !globe.rotating;
+}

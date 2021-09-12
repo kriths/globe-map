@@ -19,6 +19,7 @@ export default class Globe {
   private readonly globe: Mesh;
   private readonly children: Object3D[];
   private readonly countries: CountryMarker[];
+  public rotating = true;
 
   constructor(scene: Scene) {
     this.globe = new Mesh(
@@ -61,7 +62,9 @@ export default class Globe {
   }
 
   public tick() {
-    this.globe.rotateY(ROTATION_PER_TICK);
-    this.children.forEach(dot => dot.position.applyAxisAngle(AXIS_SOUTH_NORTH, ROTATION_PER_TICK));
+    if (this.rotating) {
+      this.globe.rotateY(ROTATION_PER_TICK);
+      this.children.forEach(dot => dot.position.applyAxisAngle(AXIS_SOUTH_NORTH, ROTATION_PER_TICK));
+    }
   }
 }
