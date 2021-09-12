@@ -228,7 +228,10 @@
     "alpha2": "CF",
     "alpha3": "CAF",
     "lat": 7,
-    "lon": 21
+    "lon": 21,
+    "alternatives": [
+      "car"
+    ]
   },
   {
     "name": "Chad",
@@ -277,7 +280,10 @@
     "alpha2": "CD",
     "alpha3": "COD",
     "lat": 0,
-    "lon": 25
+    "lon": 25,
+    "alternatives": [
+      "drc"
+    ]
   },
   {
     "name": "Costa Rica",
@@ -319,7 +325,10 @@
     "alpha2": "CZ",
     "alpha3": "CZE",
     "lat": 49.75,
-    "lon": 15.5
+    "lon": 15.5,
+    "alternatives": [
+      "czechia"
+    ]
   },
   {
     "name": "Denmark",
@@ -487,7 +496,10 @@
     "alpha2": "GW",
     "alpha3": "GNB",
     "lat": 12,
-    "lon": -15
+    "lon": -15,
+    "alternatives": [
+      "guinea bissau"
+    ]
   },
   {
     "name": "Guyana",
@@ -504,11 +516,14 @@
     "lon": -72.4167
   },
   {
-    "name": "Holy See (Vatican City State)",
+    "name": "Holy See",
     "alpha2": "VA",
     "alpha3": "VAT",
     "lat": 41.9,
-    "lon": 12.45
+    "lon": 12.45,
+    "alternatives": [
+      "vatican"
+    ]
   },
   {
     "name": "Honduras",
@@ -627,7 +642,11 @@
     "alpha2": "KP",
     "alpha3": "PRK",
     "lat": 40,
-    "lon": 127
+    "lon": 127,
+    "alternatives": [
+      "dprk",
+      "north korea"
+    ]
   },
   {
     "name": "South Korea",
@@ -651,7 +670,7 @@
     "lon": 75
   },
   {
-    "name": "Lao People's Democratic Republic",
+    "name": "Laos",
     "alpha2": "LA",
     "alpha3": "LAO",
     "lat": 18,
@@ -714,7 +733,7 @@
     "lon": 6.1667
   },
   {
-    "name": "Macedonia, the former Yugoslav Republic of",
+    "name": "Macedonia",
     "alpha2": "MK",
     "alpha3": "MKD",
     "lat": 41.8333,
@@ -791,14 +810,14 @@
     "lon": -102
   },
   {
-    "name": "Micronesia, Federated States of",
+    "name": "Micronesia",
     "alpha2": "FM",
     "alpha3": "FSM",
     "lat": 6.9167,
     "lon": 158.25
   },
   {
-    "name": "Moldova, Republic of",
+    "name": "Moldova",
     "alpha2": "MD",
     "alpha3": "MDA",
     "lat": 47,
@@ -931,7 +950,7 @@
     "lon": 134.5
   },
   {
-    "name": "Palestinian Territory, Occupied",
+    "name": "Palestine",
     "alpha2": "PS",
     "alpha3": "PSE",
     "lat": 32,
@@ -1019,21 +1038,30 @@
     "alpha2": "KN",
     "alpha3": "KNA",
     "lat": 17.3333,
-    "lon": -62.75
+    "lon": -62.75,
+    "alternatives": [
+      "st kitts and nevis"
+    ]
   },
   {
     "name": "Saint Lucia",
     "alpha2": "LC",
     "alpha3": "LCA",
     "lat": 13.8833,
-    "lon": -61.1333
+    "lon": -61.1333,
+    "alternatives": [
+      "st lucia"
+    ]
   },
   {
     "name": "St. Vincent and the Grenadines",
     "alpha2": "VC",
     "alpha3": "VCT",
     "lat": 13.25,
-    "lon": -61.2
+    "lon": -61.2,
+    "alternatives": [
+      "st vincent and the grenadines"
+    ]
   },
   {
     "name": "Samoa",
@@ -1190,7 +1218,7 @@
     "lon": 8
   },
   {
-    "name": "Syrian Arab Republic",
+    "name": "Syria",
     "alpha2": "SY",
     "alpha3": "SYR",
     "lat": 35,
@@ -1211,7 +1239,7 @@
     "lon": 71
   },
   {
-    "name": "Tanzania, United Republic of",
+    "name": "Tanzania",
     "alpha2": "TZ",
     "alpha3": "TZA",
     "lat": -6,
@@ -1229,7 +1257,11 @@
     "alpha2": "TL",
     "alpha3": "TLS",
     "lat": -8.55,
-    "lon": 125.5167
+    "lon": 125.5167,
+    "alternatives": [
+      "east timor",
+      "timor leste"
+    ]
   },
   {
     "name": "Togo",
@@ -1299,21 +1331,30 @@
     "alpha2": "AE",
     "alpha3": "ARE",
     "lat": 24,
-    "lon": 54
+    "lon": 54,
+    "alternatives": [
+      "uae"
+    ]
   },
   {
     "name": "United Kingdom",
     "alpha2": "GB",
     "alpha3": "GBR",
     "lat": 54,
-    "lon": -2
+    "lon": -2,
+    "alternatives": [
+      "uk"
+    ]
   },
   {
     "name": "United States",
     "alpha2": "US",
     "alpha3": "USA",
     "lat": 38,
-    "lon": -97
+    "lon": -97,
+    "alternatives": [
+      "usa"
+    ]
   },
   {
     "name": "Uruguay",
@@ -1349,13 +1390,6 @@
     "alpha3": "VNM",
     "lat": 16,
     "lon": 106
-  },
-  {
-    "name": "Western Sahara",
-    "alpha2": "EH",
-    "alpha3": "ESH",
-    "lat": 24.5,
-    "lon": -13
   },
   {
     "name": "Yemen",

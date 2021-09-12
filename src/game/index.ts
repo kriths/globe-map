@@ -7,6 +7,13 @@ interface CountryOption {
   found: boolean;
 }
 
+function doesCountryMatch(country: Country, text: string): boolean {
+  if (country.name.toLowerCase() === text)
+    return true;
+
+  return !!country.alternatives?.find(alt => text === alt);
+}
+
 export default class Game {
   private readonly input: HTMLInputElement;
   private readonly globe: Globe;
@@ -30,7 +37,7 @@ export default class Game {
     }
 
     const match = Object.values(this.countries)
-      .find(op => !op.found && (text === op.country.name.toLowerCase()));
+      .find(op => !op.found && doesCountryMatch(op.country, text));
 
     if (match) {
       match.found = true;
