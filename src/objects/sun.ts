@@ -1,20 +1,20 @@
 import {AmbientLight, Mesh, MeshBasicMaterial, PointLight, Scene, SphereGeometry, Vector3} from "three";
 
-const color = 0xeeddaa;
-const position = new Vector3(50, 50, 100);
+const COLOR = 0xeeddaa;
+const POSITION = new Vector3(100, 50, 100);
 
 export default function addSun(scene: Scene) {
   const sun = new Mesh(
     new SphereGeometry(3, 8, 8),
-    new MeshBasicMaterial({ color }),
+    new MeshBasicMaterial({ color: COLOR }),
   );
-  sun.position.copy(position);
+  sun.position.copy(POSITION);
   scene.add(sun);
 
-  const sunLight = new PointLight(color, 0.7);
-  sunLight.position.copy(position);
+  const sunLight = new PointLight(COLOR, 0.7);
+  sunLight.position.copy(POSITION);
   scene.add(sunLight);
 
-  const ambientLight = new AmbientLight(color, 0.1);
+  const ambientLight = new AmbientLight(COLOR, 0.1);
   scene.add(ambientLight);
 }
