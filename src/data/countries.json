@@ -656,6 +656,13 @@
     "lon": 127.5
   },
   {
+    "name": "Kosovo",
+    "alpha2": "XK",
+    "alpha3": "UNK",
+    "lat": 42.7,
+    "lon": 21.2
+  },
+  {
     "name": "Kuwait",
     "alpha2": "KW",
     "alpha3": "KWT",
@@ -1201,7 +1208,10 @@
     "alpha2": "SZ",
     "alpha3": "SWZ",
     "lat": -26.5,
-    "lon": 31.5
+    "lon": 31.5,
+    "alternatives": [
+      "eswatini"
+    ]
   },
   {
     "name": "Sweden",
