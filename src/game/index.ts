@@ -1,6 +1,7 @@
 import Globe from "../objects/globe";
 import countries from "../data/countries.json";
 import {Country} from "../data/country";
+import flagForCountry from "../util/flag";
 
 interface CountryOption {
   country: Country;
@@ -16,6 +17,7 @@ function doesCountryMatch(country: Country, text: string): boolean {
 
 export default class Game {
   private readonly input: HTMLInputElement;
+  private readonly flagList: HTMLDivElement;
   private readonly globe: Globe;
   private readonly countries: Record<string, CountryOption>;
 
@@ -23,6 +25,7 @@ export default class Game {
     this.globe = globe;
     this.countries = Game.loadCountries();
     this.input = document.getElementById("country-ipt") as HTMLInputElement;
+    this.flagList = document.getElementById("flag-list") as HTMLDivElement;
 
     this.input.addEventListener("input", this.onInputChange.bind(this));
   }
@@ -43,6 +46,12 @@ export default class Game {
       match.found = true;
       this.globe.findCountry(match.country.alpha2);
       this.input.value = "";
+
+      const flag = document.createElement("span");
+      flag.className = "flag";
+      flag.innerText = flagForCountry(match.country);
+      this.flagList.appendChild(flag);
+
       this.checkProgress();
     }
   }
