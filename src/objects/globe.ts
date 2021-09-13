@@ -1,4 +1,13 @@
-import {Color, Mesh, MeshBasicMaterial, MeshStandardMaterial, Scene, SphereGeometry, Vector3} from "three";
+import {
+  Color,
+  Mesh,
+  MeshBasicMaterial,
+  MeshStandardMaterial,
+  Scene,
+  SphereGeometry,
+  TextureLoader,
+  Vector3
+} from "three";
 import {degToRad} from "three/src/math/MathUtils";
 import {Object3D} from "three/src/core/Object3D";
 import countries from "../data/countries.json";
@@ -22,10 +31,13 @@ export default class Globe {
   public rotating = true;
 
   constructor(scene: Scene) {
+    // Globe texture public domain by:
+    // http://www.shadedrelief.com/natural3/pages/textures.html
+    const texture = new TextureLoader().load("textures/globe_texture.jpg")
     this.globe = new Mesh(
       new SphereGeometry(1, 160, 100),
       new MeshStandardMaterial({
-        wireframe: true,
+        map: texture,
       }),
     );
     scene.add(this.globe);

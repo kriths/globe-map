@@ -15,6 +15,6 @@ export default function addSun(scene: Scene) {
   sunLight.position.copy(POSITION);
   scene.add(sunLight);
 
-  const ambientLight = new AmbientLight(COLOR, 0.1);
+  const ambientLight = new AmbientLight(COLOR, 0.3);
   scene.add(ambientLight);
 }
