@@ -43,6 +43,22 @@ export default class Game {
       match.found = true;
       this.globe.findCountry(match.country.alpha2);
       this.input.value = "";
+      this.checkProgress();
+    }
+  }
+
+  private checkProgress() {
+    const count = Object.values(this.countries)
+      .filter(country => country.found)
+      .length;
+
+    document.getElementById("guess-count").innerText = count.toString();
+
+    const total = Object.values(this.countries).length;
+    if (count === total) {
+      const checkMark = document.createElement("span");
+      checkMark.innerText = "✅";
+      document.getElementById("guess-counter").appendChild(checkMark);
     }
   }
 
@@ -54,6 +70,10 @@ export default class Game {
         found: false,
       };
     }
+
+    document.getElementById("guess-count").innerText = "0";
+    document.getElementById("guess-total").innerText = countries.length.toString();
+
     return options;
   }
 }
